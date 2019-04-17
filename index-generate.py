@@ -12,11 +12,11 @@ title='CBW2007的CDN'
 blacklist=['.git','index.html','CNAME','404.html']
 def make(s):
 	d=os.listdir('.')
-	with open('index.html','w') as f:
+	with open('index.html','w',encoding='utf-8') as f:
 		f.write('<!DOCTYPE html>\n')
 		f.write('<html lang="zh-CN">\n')
 		f.write('<head>\n')
-		f.write('	<meta charset="GB2312">\n')
+		f.write('	<meta charset="UTF-8">\n')
 		f.write('	<title>{0}</title>\n'.format(title))
 		f.write('	<link rel="icon" href="/logo.png"/>\n')
 		f.write('</head>\n')
