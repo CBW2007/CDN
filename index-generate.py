@@ -16,7 +16,7 @@ def make(s):
 		f.write('<!DOCTYPE html>\n')
 		f.write('<html lang="zh-CN">\n')
 		f.write('<head>\n')
-		f.write('	<meta charset="GB-2312">\n')
+		f.write('	<meta charset="GB2312">\n')
 		f.write('	<title>{0}</title>\n'.format(title))
 		f.write('	<link rel="icon" href="/logo.png"/>\n')
 		f.write('</head>\n')
