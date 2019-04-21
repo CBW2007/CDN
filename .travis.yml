@@ -11,9 +11,7 @@ dist: xenial
 before_install: 
   - export TZ='Asia/Shanghai'
 
-install:
-  - pip install os
-  - pip install io
+install: true
 
 script:
   - python index-generate.py
