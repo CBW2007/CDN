@@ -1,0 +1,32 @@
+# 指定语言环境
+language: python
+
+python:
+- "3.6"
+
+# 指定 CI 系统版本为 Ubuntu16.04 LTS
+dist: xenial
+
+# Start: Build Lifecycle
+before_install: 
+  - export TZ='Asia/Shanghai'
+
+install:
+  - pip install os
+  - pip install io
+
+script:
+  - python index-generate.py
+
+deploy:
+  provider: pages
+  skip_cleanup: true # 跳过清理
+  name: $GIT_NAME # 用户名变量
+  email: $GIT_EMAIL # 用户邮箱变量
+  github_token: $GITHUB_TOKEN # GitHub Token变量
+  keep-history: true # 保持推送记录，以增量提交的方式
+  target-branch: master # 推送的目标分支
+  on:
+    branch: master # 工作分支
+    
+# End: Build LifeCycle
