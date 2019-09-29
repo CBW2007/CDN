@@ -8,10 +8,28 @@
 '''
 import os
 import io
+import functools
 title='CBW2007的CDN'
 blacklist=['.git','index.html','CNAME','404.html']
+def cmp(a,b):
+	if (os.path.isdir(a) and not(os.path.isdir(b))):
+		return -1
+	if (os.path.isdir(b) and not(os.path.isdir(a))):
+		return 1
+	if (a!=b):
+		if (len(a)>len(b)):
+			return 1
+		elif (len(a)<len(b)):
+			return -1
+		elif (a>b):
+			return 1
+		elif (a<b):
+			return -1
+		else:
+			return 0
 def make(s):
 	d=os.listdir('.')
+	d.sort(key=functools.cmp_to_key(cmp))
 	with open('index.html','w',encoding='utf-8') as f:
 		f.write('<!DOCTYPE html>\n')
 		f.write('<html lang="zh-CN">\n')
@@ -40,8 +58,7 @@ def make(s):
 		f.write('</ul>')
 		f.write('<hr>')
 		f.write('我的博客：<a href="https://www.cbw2007.tk/">https://www.cbw2007.tk/</a>，欢迎光临！</br>\n')
-		f.write('<center>Powered by GitHubPages</center>\n')
-		
+		f.write('<center>Powered by GitHub Pages</center>\n')
 		print('[INFO] The index of \'{0}\' generated.'.format(s))
 make('/')
 print('[INFO] Done!')
