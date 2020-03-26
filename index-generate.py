@@ -58,7 +58,7 @@ def make(s):
 		f.write('</ul>')
 		f.write('<hr>')
 		f.write('我的博客：<a href="https://www.cbw2007.tk/">https://www.cbw2007.tk/</a>，欢迎光临！</br>\n')
-		f.write('<center>Powered by Coding Pages</center>\n')
+		f.write('<center>Hosted by GitHub Pages</center>\n')
 		print('[INFO] The index of \'{0}\' generated.'.format(s))
 make('/')
 print('[INFO] Done!')
