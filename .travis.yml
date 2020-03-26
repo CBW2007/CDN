@@ -27,11 +27,11 @@ deploy:
   on:
     branch: master # 工作分支
     
-after_deploy:
-  - cd /tmp
-  - git clone https://github.com/CBW2007/CDN.git
-  - cd CDN
-  - git remote add coding https://$CODING_USER:$CODING_TOKEN@git.dev.tencent.com/CBW2007/CDN.git
-  - git push coding --all -f
+#after_deploy:
+#  - cd /tmp
+#  - git clone https://github.com/CBW2007/CDN.git
+#  - cd CDN
+#  - git remote add coding https://$CODING_USER:$CODING_TOKEN@git.dev.tencent.com/CBW2007/CDN.git
+#  - git push coding --all -f
     
 # End: Build LifeCycle
